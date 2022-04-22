@@ -1,0 +1,50 @@
+{
+  "name": "patrikgrinsvall/laravel-html-template",
+  "description": "template using vanilla js and html",
+  "keywords": [
+    "Patrikgrinsvall",
+    "laravel-html-template"
+  ],
+  "homepage": "https://github.com/patrikgrinsvall/laravel-html-template",
+  "license": "Proprietary",
+  "authors": [
+    {
+      "name": "Patrik Grinsvall",
+      "email": "patrik@silentridge.io",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.1"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "pestphp/pest": "^1.20"
+  },
+  "autoload": {
+    "psr-4": {
+      "Patrikgrinsvall\\LaravelHtmlTemplate\\": "src"
+    },
+    "files": [
+      "./src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Patrikgrinsvall\\LaravelHtmlTemplate\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": false
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
