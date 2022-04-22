@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Cache;
 
-if ( !function_exists("totaltime")) {
+if (! function_exists("totaltime")) {
     function totaltime(bool $out = true)
     {
         $message = "[ ".CURRENT_REQUEST_ID." ][ ".date("Y-m-d h:i:s")." ] Done, Total script time : ".microtime(true) - LARAVEL_START;
@@ -13,7 +13,7 @@ if ( !function_exists("totaltime")) {
         }
     }
 }
-if ( !function_exists("dump_cache")) {
+if (! function_exists("dump_cache")) {
     function dump_cache()
     {
         $console = false;
@@ -25,14 +25,15 @@ if ( !function_exists("dump_cache")) {
             foreach ($tags as $tag) {
                 dump(collect(Cache::tags($tag))->values()->first());
             }
-            dump("Cache info: ", "\t config: ".App::configurationIsCached(),
+            dump(
+                "Cache info: ",
+                "\t config: ".App::configurationIsCached(),
                 "\t Routes: ".App::routesAreCached(),
                 "\t Packages: ".App::getCachedPackagesPath(),
-                "\t Services: ".App::getCachedServicesPath());
+                "\t Services: ".App::getCachedServicesPath()
+            );
         } else {
             dump("please run this in console");
         }
-
     }
-
 }
